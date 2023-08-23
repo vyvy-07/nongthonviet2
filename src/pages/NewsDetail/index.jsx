@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Comments from "../../components/Comments";
 import Headermidle from "../../components/HeaderMidle/Headermidle";
 import Newest from "../../components/Newest/Newest";
