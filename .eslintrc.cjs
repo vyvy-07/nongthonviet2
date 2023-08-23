@@ -4,10 +4,10 @@ module.exports = {
     browser: true,
     es2020: true,
   },
-  extends: "react",
+  // extends: "react",
   rules: {
-    "react/no-unescaped-entities": "off",
-    "@next/next/no-page-custom-font": "off",
+    // "react/no-unescaped-entities": "off",
+    // "@next/next/no-page-custom-font": "off",
   },
   parserOptions: {
     sourceType: "module", // Đảm bảo sourceType là 'module'
