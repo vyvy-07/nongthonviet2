@@ -1,30 +1,16 @@
 module.exports = {
-  extends: "airbnb",
+  root: true,
+  env: {
+    browser: true,
+    es2020: true,
+  },
+  // extends: "react",
   rules: {
-    // JSX
-    "react/prop-types": [
-      1,
-      {
-        ignore: ["className", "children", "location", "params", "location*"],
-      },
-    ],
-    "no-param-reassign": [
-      0,
-      {
-        props: false,
-      },
-    ],
-    "prefer-rest-params": 1,
-    "arrow-body-style": 0,
-    "prefer-template": 0,
-    "react/prefer-stateless-function": 1,
-    "react/jsx-no-bind": [
-      0,
-      {
-        ignoreRefs: false,
-        allowArrowFunctions: false,
-        allowBind: true,
-      },
-    ],
+    // "react/no-unescaped-entities": "off",
+    // "@next/next/no-page-custom-font": "off",
+    "react/jsx-no-undef": "off", // Tắt kiểm tra dấu ngoặc nhọn
+  },
+  parserOptions: {
+    sourceType: "module",
   },
 };
