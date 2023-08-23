@@ -11,4 +11,5 @@ module.exports = {
   rules: {
     "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }], // Cho phép sử dụng JSX trong tệp .js và .jsx
   },
+  parser: "@babel/eslint-parser",
 };
