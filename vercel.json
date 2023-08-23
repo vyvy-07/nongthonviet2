@@ -2,7 +2,7 @@
      "routes": [
       {
         "src": "/(.*)",
-        "destination": "/"
+        "dest": "/"
       }
     ],"rewrites": [{ "source": "/(.*)", "destination": "/" }],
     "buildCommand": "next build", "cleanUrls": true, "devCommand": "next dev"
