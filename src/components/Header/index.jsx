@@ -1,4 +1,3 @@
-import React from "react";
 import HeaderCpn from "./HeaderCpn";
 import "./header.css";
 import useHeader from "./useHeader";

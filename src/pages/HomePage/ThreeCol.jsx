@@ -1,7 +1,6 @@
-import React from "react";
 import BoxsItem from "../../components/BoxsItem";
 
-const ThreeCol = ({ classname = true, data, label }) => {
+const ThreeCol = ({ classname = true, data, label = "" }) => {
   return (
     <section className="threeCol">
       <div className="container">

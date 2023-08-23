@@ -1,5 +1,3 @@
-import React from "react";
-
 const Comments = () => {
   return (
     <section className="comments p-t32">

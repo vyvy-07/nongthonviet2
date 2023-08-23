@@ -1,5 +1,3 @@
-import React from "react";
-
 const ModalFullMenu = ({ isModal, setIsModal, listCategory }) => {
   return (
     <div className={`modal-fullmenu ${isModal && "active"}`}>

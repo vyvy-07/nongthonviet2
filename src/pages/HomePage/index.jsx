@@ -1,4 +1,3 @@
-import React from "react";
 import Advert from "./Advert";
 import Listnews from "./Listnews";
 import ThreeCol from "./ThreeCol";
