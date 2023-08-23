@@ -1,4 +1,3 @@
-import React from "react";
 import BoxsItem from "../../components/BoxsItem";
 import ReactHlsPlayer from "react-hls-player";
 const ContentDetail = ({

@@ -1,4 +1,3 @@
-import React from "react";
 import Comments from "../../components/Comments";
 import Headermidle from "../../components/HeaderMidle/Headermidle";
 import Newest from "../../components/Newest/Newest";
@@ -14,8 +13,7 @@ const NewsDetail = () => {
   //   console.log("isLoading", isLoading);
   //   return <Loading />;
   // }
-  const loading = useDebounce(isLoading, 400);
-  console.log("dataFeatured", dataFeatured);
+  useDebounce(isLoading, 400);
   return (
     <div>
       {/* {dataFeatured && ( */}
