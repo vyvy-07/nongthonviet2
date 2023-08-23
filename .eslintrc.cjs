@@ -1,11 +1,11 @@
 module.exports = {
-  root: true,
-  env: {
-    browser: true,
-    es2020: true,
-  },
-  rules: {},
-  parserOptions: {
-    sourceType: "module",
-  },
+  // ...
+  overrides: [
+    {
+      files: ["**/*.jsc"], // Áp dụng cho tất cả các tệp có phần mở rộng .jsc
+      rules: {
+        "react/jsx-filename-extension": "off", // Tắt kiểm tra phần mở rộng tệp JSX
+      },
+    },
+  ],
 };
