@@ -4,12 +4,9 @@ module.exports = {
     browser: true,
     es2020: true,
   },
-  // extends: "react",
+  extends: "react",
+  rules: {},
   parserOptions: {
     sourceType: "module", // Đảm bảo sourceType là 'module'
   },
-  rules: {
-    "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }], // Cho phép sử dụng JSX trong tệp .js và .jsx
-  },
-  parser: "@babel/eslint-parser",
 };
