@@ -2,9 +2,13 @@ module.exports = {
   // ...
   overrides: [
     {
-      files: ["**/*.jsc"], // Áp dụng cho tất cả các tệp có phần mở rộng .jsc
+      files: ["**/*.jsc"],
+
+      extends: "next",
       rules: {
-        "react/jsx-filename-extension": "off", // Tắt kiểm tra phần mở rộng tệp JSX
+        "react/jsx-filename-extension": "off",
+        "react/no-unescaped-entities": "off",
+        "@next/next/no-page-custom-font": "off",
       },
     },
   ],
