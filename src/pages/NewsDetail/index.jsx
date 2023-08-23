@@ -1,11 +1,10 @@
 import React from "react";
+import Comments from "../../components/Comments";
 import Headermidle from "../../components/HeaderMidle/Headermidle";
 import Newest from "../../components/Newest/Newest";
-import Comments from "../../components/Comments";
+import useDebounce from "../../hooks/useDebounce";
 import ContentDetail from "./ContentDetail";
 import useNewsDetail from "./useNewsDetail";
-import Loading from "../../components/Loading";
-import useDebounce from "../../hooks/useDebounce";
 
 const NewsDetail = () => {
   // const { slug } = useNewsDetail();

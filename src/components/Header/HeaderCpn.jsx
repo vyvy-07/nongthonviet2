@@ -1,9 +1,8 @@
 import React from "react";
-import ModalFullMenu from "./ModalFullMenu";
 import { Link } from "react-router-dom";
 import { PATH } from "../../constants/path";
 
-const HeaderCpn = ({ headerMidle }) => {
+const HeaderCpn = () => {
   // const {alias}
   return (
     <header className="header">

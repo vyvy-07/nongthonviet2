@@ -1,21 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { PATH } from "../constants/path";
-import HLSPlayer from "react-hls";
 
 const BoxsItem = ({
   className,
   date__time = true,
   desc_e = false,
   featuredImage,
-  excerpt,
   category,
   sapo,
   alias,
   title,
   featuredMedia,
   classTitle = "",
-  postMedia,
 }) => {
   return (
     <div className={`boxs__item ${className}`}>
@@ -23,8 +19,8 @@ const BoxsItem = ({
         <Link to={`/news-detail/${alias}`} className="boxs__item-img">
           <video
             className="img"
-            src={`${featuredMedia?.uri}?autoplay=1` || []}
-            alt={featuredMedia?.alt}
+            src={`${featuredMedia?.uri || []}?autoplay=1` || []}
+            alt={featuredMedia?.alt || ""}
             autoPlay
             muted
             loop

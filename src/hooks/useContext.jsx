@@ -1,7 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { Category } from "../services/categoriesServices";
-import useQuery from "./useQuery";
-import { ListNews } from "../services/newsServices";
 
 const pageContext = createContext({});
 export const PageProvider = ({ children }) => {
