@@ -5,4 +5,7 @@ module.exports = {
     es2020: true,
   },
   rules: {},
+  parserOptions: {
+    sourceType: "module", // Đảm bảo sourceType là 'module'
+  },
 };
