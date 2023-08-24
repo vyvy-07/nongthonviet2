@@ -4,12 +4,9 @@ import { Category } from "../services/categoriesServices";
 const pageContext = createContext({});
 export const PageProvider = ({ children }) => {
   const [isModal, setIsModal] = useState(false);
-  // const [dataVideo, setDataVideo] = useState([]);
-  // const [dataEmg, setDataEmg] = useState([]);
-  // const [dataPs, setDataPs] = useState([]);
-  // const [dataInfoGr, setDataInfoGr] = useState([]);
-  // const [dataRadio, setDataRadio] = useState([]);
+
   const [listCategory, setListCategory] = useState([]);
+  const [listId, setListId] = useState([]);
 
   const [idCategories, setIdCategories] = useState({
     idMedia: "",
@@ -49,6 +46,7 @@ export const PageProvider = ({ children }) => {
             };
           });
           if (newArr) {
+            setListId(newArr);
             const newIdCategories = {};
             newArr?.map((item) => {
               if (item?.name === "media") {
@@ -96,7 +94,6 @@ export const PageProvider = ({ children }) => {
     };
     awCategory();
   }, []);
-
   return (
     <pageContext.Provider
       value={{
@@ -105,6 +102,7 @@ export const PageProvider = ({ children }) => {
         setListCategory,
         headerMidle,
         idMedia,
+        listId,
       }}
     >
       {children}

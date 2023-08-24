@@ -28,7 +28,7 @@ const HomePage = () => {
     <>
       <Headermidle headerMidle={headerMidle} />
       <main className="homepage">
-        <TwoCol data={dataVideo} />
+        <TwoCol data={dataVideo} className={"--boxs-xl"} />
         <Listnews isRender={false} data={dataVideo} />
         <Advert />
         <ThreeCol data={dataEmg} label="Emagazine" />
