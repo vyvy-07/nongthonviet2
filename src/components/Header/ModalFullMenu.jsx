@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+import { PATH } from "../../constants/path";
+
 const ModalFullMenu = ({ isModal, setIsModal, listCategory }) => {
   return (
     <div className={`modal-fullmenu ${isModal && "active"}`}>
@@ -11,18 +14,24 @@ const ModalFullMenu = ({ isModal, setIsModal, listCategory }) => {
             return (
               <ul className="headermidle__categories" key={item?.id || index}>
                 <li className="nav-item">
-                  <a className="categories-item" href="#">
+                  <Link
+                    to={PATH.DETAIL_PAGE.replace(":alias", item?.alias)}
+                    className="categories-item"
+                  >
                     {item?.name}
-                  </a>
+                  </Link>
                 </li>
 
                 {item?.subCates?.length > 0 &&
                   item?.subCates?.map((sub, index) => {
                     return (
                       <li className="item" key={sub?.id || index}>
-                        <a className="categories-item" href="#">
+                        <Link
+                          to={PATH.DETAIL_PAGE.replace(":alias", item?.alias)}
+                          className="categories-item"
+                        >
                           {sub?.name}
-                        </a>
+                        </Link>
                       </li>
                     );
                   })}

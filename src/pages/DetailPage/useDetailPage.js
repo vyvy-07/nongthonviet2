@@ -1,9 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { ListNews } from "../../services/newsServices";
-import { useEffect } from "react";
-import { usePage } from "../../hooks/useContext";
 import { Category } from "../../services/categoriesServices";
+import { ListNews } from "../../services/newsServices";
 
 const useDetailPage = () => {
   const [isLoading, setIsLoading] = useState(true);

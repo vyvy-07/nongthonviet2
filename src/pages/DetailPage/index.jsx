@@ -1,4 +1,3 @@
-import BoxsItem from "../../components/BoxsItem";
 import Headermidle from "../../components/HeaderMidle/Headermidle";
 import Loading from "../../components/Loading";
 import ScBanner from "./ScBanner";

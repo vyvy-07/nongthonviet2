@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { Category } from "../services/categoriesServices";
+import { useLocation } from "react-router-dom";
 
 const pageContext = createContext({});
 export const PageProvider = ({ children }) => {
@@ -20,6 +21,10 @@ export const PageProvider = ({ children }) => {
   });
 
   const onChangeModal = () => setIsModal(!isModal);
+  const { pathname } = useLocation();
+  useEffect(() => {
+    setIsModal(false);
+  }, [pathname]);
 
   //open modal
   const headerMidle = {
@@ -90,7 +95,6 @@ export const PageProvider = ({ children }) => {
   useEffect(() => {
     const awCategory = async () => {
       const res = await getCategory();
-      console.log("success!");
     };
     awCategory();
   }, []);

@@ -1,113 +1,64 @@
+import { Link } from "react-router-dom";
+import { usePage } from "../../hooks/useContext";
+import { PATH } from "../../constants/path";
+
 const Footer = () => {
+  const { listCategory } = usePage();
   return (
     <footer className="footer">
       <div className="container">
         <div className="footer__list">
-          <ul className="footer__list-menu">
-            <li>
-              <a className="categories-item" href="#">
-                TIN TỨC
-              </a>
-            </li>
-            <li>
-              <a className="categories-item" href="#">
-                GÓC NHÌN CHUYÊN GIA
-              </a>
-            </li>
-            <li>
-              <a className="categories-item" href="#">
-                NÔNG NGHIỆP 360
-              </a>
-            </li>
-            <li>
-              <a className="categories-item" href="#">
-                NÔNG THÔN MỚI
-              </a>
-            </li>
-          </ul>
-          <ul className="footer__list-menu">
-            <li>
-              <a className="categories-item" href="#">
-                VÌ CỘNG ĐỒNG
-              </a>
-            </li>
-            <li>
-              <a className="categories-item" href="#">
-                MÔI TRƯỜNG VÀ TÀI NGUYÊN
-              </a>
-            </li>
-            <li>
-              <a className="categories-item" href="#">
-                KHOA HỌC
-              </a>
-            </li>
-            <li>
-              <a className="categories-item" href="#">
-                LUẬT SƯ CỦA BẠN
-              </a>
-            </li>
-          </ul>
-          <ul className="footer__list-menu">
-            <li>
-              <a className="categories-item" href="#">
-                VĂN HÓA
-              </a>
-            </li>
-            <li>
-              <a className="categories-item" href="#">
-                CUỘC SỐNG
-              </a>
-            </li>
-            <li>
-              <a className="categories-item" href="#">
-                NGƯỜI TRUYỀN LỬA
-              </a>
-            </li>
-            <li>
-              <a className="categories-item" href="#">
-                GIA VỊ CHO CUỘC SỐNG
-              </a>
-            </li>
-          </ul>
-          <ul className="footer__list-menu">
-            <li>
-              <a className="categories-item" href="#">
-                THẾ GIỚI
-              </a>
-            </li>
-            <li>
-              <a className="categories-item" href="#">
-                BẠN ĐỌC
-              </a>
-            </li>
-          </ul>
-          <ul className="footer__list-menu">
-            <li>
-              <a className="categories-item" href="#">
-                E-MAGAZINE
-              </a>
-            </li>
-            <li>
-              <a className="categories-item" href="#">
-                VIDEO
-              </a>
-            </li>
-            <li>
-              <a className="categories-item" href="#">
-                PODCAST
-              </a>
-            </li>
-            <li>
-              <a className="categories-item" href="#">
-                RSS
-              </a>
-            </li>
-            <li>
-              <a className="categories-item" href="#">
-                RAO VẶT
-              </a>
-            </li>
-          </ul>
+          {listCategory?.length > 0 &&
+            listCategory?.slice(0, 1).map((item, index) => {
+              return (
+                <ul className="footer__list-menu" key={item?.id || index}>
+                  {listCategory?.slice(1, 5).map((item, index) => (
+                    <li className="nav-item" key={item?.id || index}>
+                      <Link
+                        to={PATH.DETAIL_PAGE.replace(":alias", item?.alias)}
+                        className="categories-item"
+                      >
+                        {item?.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              );
+            })}
+          {listCategory?.length > 0 &&
+            listCategory?.slice(6, 7).map((item, index) => {
+              return (
+                <ul className="footer__list-menu" key={item?.id || index}>
+                  {listCategory?.slice(7, 11).map((item, index) => (
+                    <li className="nav-item" key={item?.id || index}>
+                      <Link
+                        to={PATH.DETAIL_PAGE.replace(":alias", item?.alias)}
+                        className="categories-item"
+                      >
+                        {item?.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              );
+            })}
+          {listCategory?.length > 0 &&
+            listCategory?.slice(17, 18).map((item, index) => {
+              return (
+                <ul className="footer__list-menu" key={item?.id || index}>
+                  {listCategory?.slice(13, 16).map((item, index) => (
+                    <li className="nav-item" key={item?.id || index}>
+                      <Link
+                        to={PATH.DETAIL_PAGE.replace(":alias", item?.alias)}
+                        className="categories-item"
+                      >
+                        {item?.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              );
+            })}
         </div>
         <div className="footer__main pd-tb24 btb2">
           <div className="footer__main-produce">

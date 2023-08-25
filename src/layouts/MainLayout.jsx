@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import { PageProvider } from "../hooks/useContext";
+import { PageProvider, usePage } from "../hooks/useContext";
 
 const MainLayout = () => {
   const { pathname } = useLocation();

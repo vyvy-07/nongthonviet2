@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import BoxsItem from "../../components/BoxsItem";
-import { useState } from "react";
 
 const ScListBlog = ({ data }) => {
   const [viewMore, setViewMore] = useState(false);

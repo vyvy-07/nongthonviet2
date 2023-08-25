@@ -58,7 +58,6 @@ const Newest = ({ data }) => {
             <div className="boxs --boxs-xs --boxs-xxs">
               {data?.length > 0 &&
                 data?.slice(20, 28).map((item, index) => {
-                  console.log(" item?.isFeatured", item?.isFeatured);
                   return (
                     item && (
                       <BoxsItem
