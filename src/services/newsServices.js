@@ -4,7 +4,7 @@ import { BASE_URL } from "../constants/env";
 export const ListNews = {
   getNews(id = "", query = "") {
     return axios.get(
-      `${BASE_URL}/article/listing?limit=7&skip=0&categoryId=${id}&isRandomArrange=true&${query}`
+      `${BASE_URL}/article/listing?limit=50&skip=0&categoryId=${id}&isRandomArrange=true&${query}`
     );
   },
   getNewsDetail(alias = "") {

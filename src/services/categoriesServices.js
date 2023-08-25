@@ -5,4 +5,8 @@ export const Category = {
   getListCategories(query = "") {
     return axios.get(`${BASE_URL}/category/list${query}`);
   },
+
+  getCategory(slug) {
+    return axios.get(`${BASE_URL}/category/${slug}`);
+  },
 };

@@ -3,47 +3,42 @@ import { useParams } from "react-router-dom";
 import { ListNews } from "../../services/newsServices";
 import { useEffect } from "react";
 import { usePage } from "../../hooks/useContext";
+import { Category } from "../../services/categoriesServices";
 
 const useDetailPage = () => {
-  const { listId } = usePage();
-  console.log("listId", listId);
-  const [dataListDetail, setDataListDetail] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [dataListProduct, setDataListProduct] = useState([]);
   const { alias } = useParams();
   const getDataProduct = async () => {
     try {
       setIsLoading(false);
-      if (alias && listId) {
-        listId?.filter((item) => {
-          if (item?.name === alias) {
-            getListData(item?.id);
-          }
-        });
-
-        // const dataProduct = data?.data?.result;
-        // console.log("dataProduct", dataProduct);
-        // if (dataProduct) {
-        //   const newDataProduct = dataProduct?.map(
-        //     (item) => item?.category?.categoryAlias === alias
-        //   );
-        //   console.log("newDataProduct", newDataProduct);
-        //   // setDataListDetail(dataProduct);
-        // }
+      if (alias) {
+        const res = await Category.getCategory(alias);
+        const id = res?.data?.result?.id;
+        if (id) {
+          getListProduct(id);
+        }
       }
     } catch (error) {
       setIsLoading(false);
       console.log("error", error);
     }
   };
-  const getListData = (id) => {
-    const data = ListNews.getListNews(id);
-    console.log("data", data);
+
+  const getListProduct = async (id) => {
+    try {
+      const res = await ListNews.getNews(id, "includeChildCate=true");
+      setDataListProduct(res?.data?.result);
+    } catch (error) {
+      console.log("error", error);
+    }
   };
+
   useEffect(() => {
     getDataProduct();
   }, [alias]);
 
-  return { dataListDetail };
+  return { dataListProduct, isLoading };
 };
 
 export default useDetailPage;

@@ -7,17 +7,12 @@ import ContentDetail from "./ContentDetail";
 import useNewsDetail from "./useNewsDetail";
 
 const NewsDetail = () => {
-  // const { slug } = useNewsDetail();
   const { isLoading, dataNewsDetail, dataNewsRelate, dataFeatured } =
     useNewsDetail();
-  // if (!!isLoading) {
-  //   console.log("isLoading", isLoading);
-  //   return <Loading />;
-  // }
+
   useDebounce(isLoading, 400);
   return (
     <div>
-      {/* {dataFeatured && ( */}
       <>
         <Headermidle heading={false} nav={false} />
         <main>
@@ -26,7 +21,6 @@ const NewsDetail = () => {
           <Newest label="Mới nhất" data={dataFeatured} />
         </main>
       </>
-      {/* )} */}
     </div>
   );
 };
