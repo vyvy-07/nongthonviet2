@@ -12,6 +12,7 @@ const Headermidle = ({
   const { headerMidle } = usePage() || {};
   const { listCategory, onChangeModal, setIsModal, isModal } =
     headerMidle || {};
+  console.log("label", label);
   return (
     <div>
       <div className="headermidle">
@@ -21,15 +22,21 @@ const Headermidle = ({
               <img src="/img/nav3.svg" alt="" />
             </div>
             <div className="headermidle__topic-title">
-              {!title && (
+              {!label ? (
                 <>
                   <h3 className="heading-h3">CÂU CHUYỆN TIÊU ĐIỂM:</h3>
                   <h3 className="heading-h2">
                     NÔNG NGHIỆP TUẦN HOÀN TỪ NÔNG DÂN SINH THÁI
                   </h3>
                 </>
+              ) : (
+                <h3
+                  className="heading-h2"
+                  style={{ textTransform: "uppercase" }}
+                >
+                  {label}
+                </h3>
               )}
-              <h3 className="heading-h2">{label}</h3>
             </div>
             <div className="headermidle__topic-search">
               <input

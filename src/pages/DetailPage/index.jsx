@@ -5,7 +5,7 @@ import ScListBlog from "./ScListBlog";
 import useDetailPage from "./useDetailPage";
 
 const DetailPage = () => {
-  const { dataListProduct, isLoading } = useDetailPage() || {};
+  const { dataListProduct, isLoading, title } = useDetailPage() || {};
   if (isLoading) {
     return (
       <main>
@@ -13,9 +13,10 @@ const DetailPage = () => {
       </main>
     );
   }
+  console.log("dataListProduct", dataListProduct);
   return (
     <>
-      <Headermidle heading={false} nav={false} />
+      <Headermidle heading={false} nav={false} label={title} />
       <main>
         <ScBanner data={dataListProduct} />
         <ScListBlog data={dataListProduct} />

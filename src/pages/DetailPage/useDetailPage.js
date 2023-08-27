@@ -6,15 +6,19 @@ import { ListNews } from "../../services/newsServices";
 const useDetailPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [dataListProduct, setDataListProduct] = useState([]);
+  const [title, setTitle] = useState("");
   const { alias } = useParams();
   const getDataProduct = async () => {
     try {
       setIsLoading(false);
       if (alias) {
         const res = await Category.getCategory(alias);
+        console.log("getDataProduct", res);
         const id = res?.data?.result?.id;
+
         if (id) {
           getListProduct(id);
+          setTitle(res?.data?.result?.name);
         }
       }
     } catch (error) {
@@ -36,7 +40,7 @@ const useDetailPage = () => {
     getDataProduct();
   }, [alias]);
 
-  return { dataListProduct, isLoading };
+  return { dataListProduct, isLoading, title };
 };
 
 export default useDetailPage;
