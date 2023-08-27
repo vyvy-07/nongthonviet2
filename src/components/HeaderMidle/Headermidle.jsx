@@ -12,7 +12,6 @@ const Headermidle = ({
   const { headerMidle } = usePage() || {};
   const { listCategory, onChangeModal, setIsModal, isModal } =
     headerMidle || {};
-  console.log("label", label);
   return (
     <div>
       <div className="headermidle">

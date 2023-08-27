@@ -13,7 +13,6 @@ const DetailPage = () => {
       </main>
     );
   }
-  console.log("dataListProduct", dataListProduct);
   return (
     <>
       <Headermidle heading={false} nav={false} label={title} />

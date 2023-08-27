@@ -13,9 +13,7 @@ const useDetailPage = () => {
       setIsLoading(false);
       if (alias) {
         const res = await Category.getCategory(alias);
-        console.log("getDataProduct", res);
         const id = res?.data?.result?.id;
-
         if (id) {
           getListProduct(id);
           setTitle(res?.data?.result?.name);
