@@ -5,7 +5,7 @@ const ContentDetail = ({
   excerpt,
   penName,
   articleGA,
-  description,
+  featuredImage,
   sapo,
   postContent,
   data,
@@ -72,6 +72,7 @@ const ContentDetail = ({
           <div className="sccontent__between-detail">
             <div className="detail">
               <h2 className="heading-h2 ffb">{sapo}</h2>
+              <img className="p-t32" src={featuredImage || ""} alt="" />
               <div className="pr-detail">
                 <br />
                 <p dangerouslySetInnerHTML={{ __html: postContent }}></p>
@@ -137,9 +138,9 @@ const ContentDetail = ({
             </div>
           </div>
         </div>
-        <div className="sccontent__right">
-          <div className="sccontent__right-banner">Banner QC</div>
-          <div className="sccontent__right-banner">Banner QC</div>
+        <div className="scListBlog__Banner">
+          <img src="/img/bannerdoc.jpg" alt="" />
+          <img className="p-t32" src="/img/qc.jpg" alt="" />
         </div>
       </div>
     </section>
