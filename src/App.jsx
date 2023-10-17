@@ -1,14 +1,22 @@
 import { Route, Routes } from "react-router-dom";
 import { PATH } from "./constants/path";
-import HomePage from "./pages/HomePage";
-import MainLayout from "./layouts/MainLayout";
-import Error404 from "./pages/Error404";
-import DetailPage from "./pages/DetailPage";
-import NewsDetail from "./pages/NewsDetail";
+import { Suspense, lazy } from "react";
+import Loading from "./components/Loading";
+const HomePage = lazy(() => import("./pages/HomePage"));
+const MainLayout = lazy(() => import("./layouts/MainLayout"));
+const Error404 = lazy(() => import("./pages/Error404"));
+const DetailPage = lazy(() => import("./pages/DetailPage"));
+const NewsDetail = lazy(() => import("./pages/NewsDetail"));
 
 function App() {
   return (
-    <>
+    <Suspense
+      fallback={
+        <div>
+          <Loading />
+        </div>
+      }
+    >
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<HomePage />} />
@@ -17,7 +25,7 @@ function App() {
         </Route>
         <Route path="*" element={<Error404 />} />
       </Routes>
-    </>
+    </Suspense>
   );
 }
 
